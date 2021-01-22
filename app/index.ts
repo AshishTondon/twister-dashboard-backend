@@ -14,6 +14,12 @@ const app:  express.Application = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get('/', async function(req: any, res: any){
+
+    
+  res.send({status:"200OK"});
+});
+
  app.post("/api/monitoring/sessioncheck", Authenticate, function(req: any, res: any){
    var successresult = {
          isLogin: true
