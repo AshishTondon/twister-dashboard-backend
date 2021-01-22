@@ -1,0 +1,40 @@
+{
+  "name": "twister-dashboard-backend",
+  "version": "1.0.0",
+  "description": "Backend for react dashboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node ./app/index.ts",
+    "prod": "tsc && node ./build/index.js",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/tondon.ashish/twister-dashboard-backend.git"
+  },
+  "keywords": [
+    "Dashboard",
+    "back",
+    "end"
+  ],
+  "author": "Ashish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/tondon.ashish/twister-dashboard-backend/issues"
+  },
+  "homepage": "https://gitlab.com/tondon.ashish/twister-dashboard-backend#readme",
+  "dependencies": {
+    "@types/express": "^4.17.9",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "log4js": "^6.3.0",
+    "path": "^0.12.7",
+    "ts-node": "^9.0.0",
+    "ts-node-dev": "^1.0.0",
+    "typescript": "^4.1.2"
+  }
+}

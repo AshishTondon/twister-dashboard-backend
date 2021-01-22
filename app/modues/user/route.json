@@ -1,0 +1,5 @@
+[
+    {"path":"/api/auth/login", "component":"Logoin"},
+    {"path":"/api/auth/register", "component":"register"},
+    {"path":"/api/auth/reset", "component":"resetpwd"}
+]
