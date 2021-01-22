@@ -7,7 +7,7 @@ require("dotenv").config({ path: path.basename("../.env") });
 import Authenticate from "./controllers/middleware/authentication";
 import SignIn from "./modues/user/permissions/createtoken";
 
-const { NODE_PORT } = process.env;
+const { PORT } = process.env;
 
 const app:  express.Application = express();
 
@@ -35,6 +35,6 @@ app.get('/', async function(req: any, res: any){
  });
 
 
- app.listen(NODE_PORT, function(){
-     console.log(`Inititing app at port ${NODE_PORT}!`);
+ app.listen(PORT, function(){
+     console.log(`Inititing app at port ${PORT}!`);
  })
