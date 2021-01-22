@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node ./app/index.ts",
     "prod": "tsc && node ./build/index.js",
-    "postinstall": "tsc && mv -i -v public build/ && rm -v -rf src",
+    "postinstall": "tsc && mv -i -v public build/ && rm -v -rf app",
     "tsc": "tsc",
     "start": "node ./build/index.js"
   },
