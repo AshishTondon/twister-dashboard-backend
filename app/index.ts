@@ -6,8 +6,9 @@ require("dotenv").config({ path: path.basename("../.env") });
 
 import Authenticate from "./controllers/middleware/authentication";
 import SignIn from "./modues/user/permissions/createtoken";
+import getemployee from "./modues/employee/info";
 
-const { PORT } = process.env;
+const { PORT = 3030 } = process.env;
 
 const app:  express.Application = express();
 
@@ -20,20 +21,26 @@ app.get('/', async function(req: any, res: any){
   res.send({status:"200OK"});
 });
 
- app.post("/api/monitoring/sessioncheck", Authenticate, function(req: any, res: any){
-   var successresult = {
-         isLogin: true
-   };
+app.post("/api/monitoring/sessioncheck", Authenticate, function(req: any, res: any){
+  var successresult = {
+        isLogin: true
+  };
 
-   res.send(successresult);
- });
+  res.send(successresult);
+});
 
- app.post('/api/monitoring/validateuser', async function(req: any, res: any){
+app.post('/api/monitoring/validateuser', async function(req: any, res: any){
 
-    
-    res.send(await SignIn(req.body));
- });
+  
+  res.send(await SignIn(req.body));
+});
 
+app.post('/api/employee/info', async function(req: any, res: any){
+
+  
+
+  res.send({status:"200OK", empdata: await getemployee(req.body)});
+});
 
  app.listen(PORT, function(){
      console.log(`Inititing app at port ${PORT}!`);
