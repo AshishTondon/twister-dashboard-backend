@@ -18,7 +18,12 @@ interface IN_pagination{
 const getConnection = async() =>{
     
     if(connection === null){
-        connection = new Pool();
+        connection = new Pool(
+            {
+                connectionString: process.env.DATABASE_URL,
+                ssl: true
+            }
+        );
 
         // connection = new Pool({
         //         host: 'ec2-54-164-22-242.compute-1.amazonaws.com',
